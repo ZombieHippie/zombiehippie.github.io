@@ -8,6 +8,12 @@ title: First Post
 
 <p class="meta">2 Dec 2015 - Cheek Labs</p>
 
+---
+ID: {{ page.id }}
+title: {{ page.title }}
+---
+
+
 This is just a test.
 
 $example
