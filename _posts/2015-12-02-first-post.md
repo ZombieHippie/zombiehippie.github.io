@@ -10,7 +10,9 @@ title: First Post
 
 ---
 ID: {{ page.id }}
+url: {{ page.url }}
 title: {{ page.title }}
+path: {{page.path}}
 ---
 
 
