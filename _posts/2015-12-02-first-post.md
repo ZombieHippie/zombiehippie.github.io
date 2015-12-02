@@ -8,20 +8,28 @@ title: First Post
 
 <p class="meta">2 Dec 2015 - Cheek Labs</p>
 
----
-ID: {{ page.id }}
-url: {{ page.url }}
-title: {{ page.title }}
-path: {{page.path}}
----
-
-
 This is just a test.
 
-$example
+<div id="live-example"></div>
 
-```coffee
-#$example
+```css live #example
+.test { width: 100px; height: 100px;
+  background: skyblue;
+  transition: background .4s;}
+.test[data-toggle="1"] { background: lawngreen; }
+```
+```javascript live #example
+var el = document.createElement("div")
+el.className = "test"
+el.innerText = "Click me"
+document.getElementById("live-example").appendChild(el)
+el.dataset.toggle = 0
+el.addEventListener("click", function () {
+  var strValue = el.dataset.toggle
+  el.dataset.toggle = (parseInt(strValue) + 1) % 2
+})
+```
+```coffee live #example
 el = document.createElement("div")
 el.className = "test"
 this.appendChild el
@@ -29,13 +37,6 @@ el.dataset.toggle = 0
 el.addEventListener "click", ->
 	strValue = el.dataset.toggle
 	el.dataset.toggle = (parseInt(strValue) + 1) % 2
-```
-
-```css
-//$example
-.test { width: 100px; height: 100px; background: smokewhite;
-	transition: background 2s;}
-.test[data-toggle="1"] { background: darkgrey; }
 ```
 
 More information
