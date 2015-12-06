@@ -13,7 +13,8 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract("css-loader")
       },
-      { test: /\.png$/, loader: "file-loader" }
+      { test: /\.png$/, loader: "file-loader" },
+      { test: /\.jade$/, loader: "jade-loader" }
     ]
   },
   resolve: {

@@ -22,7 +22,7 @@ This is just a test.
 var el = document.createElement("div")
 el.className = "test"
 el.innerText = "Click me"
-document.getElementById("live-example").appendChild(el)
+document.getElementById("example").appendChild(el)
 el.dataset.toggle = 0
 el.addEventListener("click", function () {
   var strValue = el.dataset.toggle

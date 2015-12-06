@@ -41,8 +41,24 @@ a {
 }
 
 /* CODE */
-.CodeMirror {
-  background: #f2f2f2 !important;
+pre, .CodeMirror {
+  line-height: 1.35em;
+  font: 11pt "Consolas", "Courier", Monospace;
+}
+.title-message {
+  color: rgba(0,0,0,0.2);
+  background: white;
+  font: 11pt "Consolas", "Courier", Monospace;
+  transition: background .2s;
+}
+.CodeMirror-focused .title-message {
+  background: rgba(255,255,0,0.2);
+}
+.title-message span:last-child {
+  float: right;
+}
+.CodeMirror .error-message {
+  word-wrap: break-word;
 }
 .CodeMirror:hover {
   cursor: text;

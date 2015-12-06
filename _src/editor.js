@@ -1,5 +1,6 @@
 var CodeMirror = require("codemirror")
 require("codemirror/lib/codemirror.css")
+require("./codemirror-theme-lawr.css")
 //require("codemirror/mode/coffeescript/coffeescript.js")
 require("codemirror/mode/javascript/javascript.js")
 require("codemirror/mode/css/css.js")
@@ -30,7 +31,8 @@ var defaults = {
   showCursorWhenSelecting: true,
   keyMap: 'sublime',
   indentWithTabs: false,
-  smartIndent: false
+  smartIndent: false,
+  theme: 'lawr'
 }
 
 for (key in defaults) {
