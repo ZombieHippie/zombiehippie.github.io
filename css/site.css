@@ -52,11 +52,6 @@ pre, .CodeMirror {
   /* Whatever your cursor color is: */
   border-right: 1px solid black;
 }
-/*pre {
-  background: #f2f2f2;
-  padding: 20px;
-  overflow: auto;
-}*/
 .CodeMirror {
   height: auto !important;
 }
