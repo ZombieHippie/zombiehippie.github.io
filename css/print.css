@@ -4,3 +4,6 @@
 .no-print {
   display: none;
 }
+#post {
+  page-break-after: always;
+}
