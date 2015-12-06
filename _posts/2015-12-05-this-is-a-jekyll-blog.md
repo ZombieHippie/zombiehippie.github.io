@@ -24,6 +24,7 @@ Here, we have the **preview** `div`, which parents `div#example`, `style`, and `
 > The id of the child `div` is based on the id of the container.
 
 Then, here we have a CSS editor that is linked to the preview above. Try changing the color `skyblue` to another css color, to see your changes immediately reflected in the preview.
+
 ```css live #example
 .test { width: 100px; height: 100px;
   background: skyblue;
@@ -32,6 +33,7 @@ Then, here we have a CSS editor that is linked to the preview above. Try changin
 ```
 
 In the same breath, you may change this javascript code to change how the html is interacted with. Today, I implemented a crude runtime error display that may not last as this blog is further developed.
+
 ```javascript live #example
 var el = document.createElement("div")
 el.className = "test"
