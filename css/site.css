@@ -29,6 +29,7 @@ blockquote {
 #post>pre {
   margin-bottom: 15px;
 }
+.live-html { padding: 16px; }
 
 /* CODE */
 code {
@@ -40,6 +41,9 @@ code {
 pre, .CodeMirror, code, .title-message {
   font: 15px "Source Code Pro", "Consolas", "Courier", Monospace !important;
 }
+.title-message { padding: 0 16px;
+  user-select:none; -webkit-user-select:none; }
+
 .title-message span:last-child {
   float: right;
 }

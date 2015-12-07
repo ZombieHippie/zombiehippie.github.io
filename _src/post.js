@@ -20,6 +20,7 @@ $("code.live").each(function(){
 
   var htmlContainer = liveCode.find(innerSelector)
   if (!htmlContainer.length) {
+    liveCode.addClass("live-code-preview")
     liveCode.append("<div id='" + innerSelector.slice(1) + "' class='live-html'></div>")
 
     htmlContainer = liveCode.find(innerSelector)

@@ -9,7 +9,7 @@ body {
     padding: 10vw;
   }
 }
-#post>pre {
+#post>pre, .live-code-preview {
   background: #f7f7f7;
 }
 /*
