@@ -6,7 +6,9 @@ input,
 select,
 textarea,
 button {
-  font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  //font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+  //font-family: "Consolas", "Courier", Monospace;
+  font-family: "Open Sans", sans-serif;
   letter-spacing: 0.01rem;
   font-weight: 400;
   font-style: normal;
@@ -19,19 +21,24 @@ button {
   color: rgba(0,0,0,0.8);
 }
 
+/* Whitespace */
+blockquote {
+  color: #6D5216;
+  font-style: italic;
+}
+#post>pre {
+  margin-bottom: 15px;
+}
+
 /* CODE */
-pre, .CodeMirror {
-  line-height: 1.35em;
-  font: 11pt "Consolas", "Courier", Monospace;
+code {
+  /* Thank you github for this style */
+  padding: 0.2em 0;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
 }
-.title-message {
-  color: rgba(0,0,0,0.2);
-  background: white;
-  font: 11pt "Consolas", "Courier", Monospace;
-  transition: background .2s;
-}
-.CodeMirror-focused .title-message {
-  background: rgba(255,255,0,0.2);
+pre, .CodeMirror, code, .title-message {
+  font: 15px "Source Code Pro", "Consolas", "Courier", Monospace !important;
 }
 .title-message span:last-child {
   float: right;
@@ -41,16 +48,6 @@ pre, .CodeMirror {
 }
 .CodeMirror:hover {
   cursor: text;
-}
-.CodeMirror .cm-matchhighlight:not(.CodeMirror-selectedtext) {
-  outline: 1px solid #bbb;
-}
-.CodeMirror-selected {
-  background-color: #ddd !important;
-}
-.CodeMirror-focused div.CodeMirror-cursor {
-  /* Whatever your cursor color is: */
-  border-right: 1px solid black;
 }
 .CodeMirror {
   height: auto !important;

@@ -9,7 +9,17 @@ body {
     padding: 10vw;
   }
 }
-
+#post>pre {
+  background: #f2f2f2;
+}
+/*
+#post>pre{
+  width: 98%;
+  margin-left: calc(-50vw + 50%);
+  padding: 0 calc(50vw - 50%);
+  background: rgba(0,39,59,.08);
+}
+*/
 /* LINKS */
 a {
   color: rgba(0,0,0,0.8);

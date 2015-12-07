@@ -1,3 +1,14 @@
+body {
+  margin: 0 .5in;
+}
+pre {
+  page-break-inside: avoid;
+}
+#post>pre {
+  margin-left: -7px;
+  padding-left: 4px;
+  border-left: 3px solid #dbdbdb;
+}
 .common-header {
   display: none;
 }

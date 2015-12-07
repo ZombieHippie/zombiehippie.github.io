@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Cole R Lawrence" />
-   <!--<link href="http://feeds.feedburner.com/cole-lawrence" rel="alternate" title="Cole R Lawrence" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>-->
+  <meta charset="utf-8" />
+  <title>{{ page.title }}</title>
+  <meta name="author" content="Cole R Lawrence" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!--<link href="http://feeds.feedburner.com/cole-lawrence" rel="alternate" title="Cole R Lawrence" type="application/atom+xml" />
+  <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>-->
 
-   <!-- Main CSS -->
-   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection, print" />
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
+  <!-- Main CSS -->
+  <link href="/css/site.css" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="/css/screen.css" rel="stylesheet" type="text/css" media="screen, projection" />
+  <link href="/css/print.css" rel="stylesheet" type="text/css" media="print" />
+  <link id="wfs" href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Open+Sans:400,600italic,400italic,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -48,6 +50,22 @@
     -->
   </div>
 </div>
+
+<script type="text/javascript">
+;(function (){
+// react to webfonts loading
+var RefreshCM = function () {
+  var cms = document.getElementsByClassName("CodeMirror")
+  Array.prototype.forEach.call(cms, function (cm) {
+    // refresh each editor
+    if (cm.CodeMirror && typeof cm.CodeMirror.refresh === "function")
+      cm.CodeMirror.refresh()
+  })
+}
+setTimeout(RefreshCM, 1000)
+
+})();
+</script>
 
 </body>
 </html>

@@ -1,18 +1,18 @@
 var CodeMirror = require("codemirror")
 require("codemirror/lib/codemirror.css")
-require("./codemirror-theme-lawr.css")
+require("./cm-theme-lawr.styl")
 //require("codemirror/mode/coffeescript/coffeescript.js")
 require("codemirror/mode/javascript/javascript.js")
 require("codemirror/mode/css/css.js")
 require("codemirror/mode/xml/xml.js")
 require("codemirror/mode/htmlmixed/htmlmixed.js")
 
-require("codemirror/keymap/sublime.js")
-
 require("codemirror/addon/search/searchcursor.js")
 require("codemirror/addon/search/match-highlighter.js")
 require("codemirror/addon/edit/closebrackets.js")
 require("codemirror/addon/selection/mark-selection.js")
+
+require("codemirror/keymap/sublime.js")
 
 //require("codemirror/mode/jade/jade.js")
 //require("codemirror/mode/go/go.js")

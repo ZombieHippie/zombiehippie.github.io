@@ -7,7 +7,6 @@ var applyTitle = require("./cm-titler")
 var codeStore = {}
 var titleTemplate = require("./components/title.jade")
 
-
 $("code.live").each(function(){
   var mode;
   var selector = (this.className.match(/\#[\w\d\-\_]+$/) || [false])[0]
