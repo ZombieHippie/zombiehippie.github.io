@@ -33,8 +33,8 @@ And here is another example of my embedded editor:
 <div id="live-test"></div>
 
 ```html live #test
-<p>
-<pre>Hello, hello</pre>
-<pre style="color: blue;">Hello, hello</pre>
-<p>
+    <p>
+    <pre>Hello, hello</pre>
+    <pre style="color: blue;">Hello, hello</pre>
+    <p>
 ```
