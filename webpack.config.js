@@ -3,8 +3,9 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: './_src/webpack-entry.js',
   output: {
-    filename: 'javascript/bundle.js',
-    path: __dirname
+    filename: 'bundle-[id].js',
+    path: __dirname + "\\javascript\\",
+    publicPath: "/javscript/"
   },
   module: {
     loaders: [
@@ -26,10 +27,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("css/bundle.css", { allChunks: true })
-    , new webpack.optimize.UglifyJsPlugin({
-      mangle: {
-        except: ['$', 'exports', 'require']
-      }
-    })
+    // , new webpack.optimize.UglifyJsPlugin({
+    //   mangle: {
+    //     except: ['$', 'exports', 'require']
+    //   }
+    // })
   ]
 };
