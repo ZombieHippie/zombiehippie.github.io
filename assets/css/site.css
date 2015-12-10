@@ -26,18 +26,28 @@ blockquote {
   color: #6D5216;
   font-style: italic;
 }
+
 #post>pre {
   margin-bottom: 15px;
 }
-.live-html { padding: 16px; }
+
+.live-html {
+  padding: 16px;
+  margin-bottom: 16px;
+}
 
 /* CODE */
-code {
+.live-html {
+  border: 1px solid #e5e9ef;
+}
+
+p code {
   /* Thank you github for this style */
   padding: 0.2em 0;
   background-color: rgba(0,0,0,0.04);
   border-radius: 3px;
 }
+
 pre, .CodeMirror, code, .title-message {
   font: 15px "Source Code Pro", "Consolas", "Courier", Monospace !important;
 }

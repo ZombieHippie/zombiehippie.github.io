@@ -1,0 +1,57 @@
+@import './colors-d.styl'
+$cursor = black
+
+/* No CodeMirror */
+
+#post>pre {
+  padding: 4px 8px 4px 8px;
+  border: 1px solid #e5e9ef;
+  color: $black;
+}
+#post>pre code {
+  white-space: pre-wrap;
+}
+
+/* CodeMirror */
+
+#post>pre, .CodeMirror-lines {
+  //background-color: whitesmoke;
+}
+
+.post-codemirror {
+  position: relative;
+  margin-left: -36px;
+}
+.post-codemirror .title-message,
+.post-codemirror .error-message {
+  margin-left: 36px;
+}
+
+.CodeMirror-linenumber {
+  padding:0;
+  color:#e0e2e5;
+  margin-left:-12px;
+}
+.CodeMirror-lines {
+  border: 1px solid #e5e9ef;
+}
+.CodeMirror-linenumbers {
+  width:35px; /*codemirror adds 1.   */
+}
+
+.error-message {color: red;}
+.title-message {
+  color: rgba(0,0,0,0.2);
+  background: transparent;
+  transition: background .2s;
+}
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background: #338FFF;
+  color: white;
+}
+.CodeMirror {background: transparent; }
+.CodeMirror-gutters {background: transparent; border-right: 0px;}
+.CodeMirror-cursor {border-left: 1px solid $cursor !important;}
+.CodeMirror-cursor {border-right: 1px solid $cursor !important;}

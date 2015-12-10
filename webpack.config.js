@@ -4,8 +4,8 @@ module.exports = {
   entry: './_src/webpack-entry.js',
   output: {
     filename: 'bundle-[id].js',
-    path: __dirname + "\\javascript\\",
-    publicPath: "/javscript/"
+    path: __dirname + "\\assets\\webpack\\",
+    publicPath: "/assets/webpack/"
   },
   module: {
     loaders: [
@@ -26,7 +26,7 @@ module.exports = {
     extensions: ["", ".coffee", ".js", ".jsx"]
   },
   plugins: [
-    new ExtractTextPlugin("css/bundle.css", { allChunks: true })
+    new ExtractTextPlugin("bundle.css", { allChunks: true })
     // , new webpack.optimize.UglifyJsPlugin({
     //   mangle: {
     //     except: ['$', 'exports', 'require']

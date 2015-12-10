@@ -2,17 +2,20 @@
 @import './colors-d.styl'
 
 $error-red = #f30
-$bg = white
-$black = black
-$cursor = black
-$selbg = #aaa
-$selbgfocus = $d4
+$error-red-sel = #f3b
+$black = #111
+$white = whitesmoke
+$bg = $white // rgba(0,0,0,0.04)// rgba(0,0,0,0.04)
+$cursor = $black
+$selbg = #ddd
+$selbgfocus = #acf
 $selfg = #111
 $linenums = $fadedgrey
 $built = $c3
 $builtw = $w3
 $str = $d2
 $strw = $w2
+$regex = $d3
 $comment = #666
 $commentw = $w2
 $attr = $d1
@@ -25,6 +28,45 @@ $tag = $c2
 $matchhi = $d1
 $matchbracketw = $w3
 
+/* No CodeMirror */
+
+#post>pre {
+  padding: 4px 8px 4px 8px;
+  border: 1px solid #e5e9ef;
+  color: $black;
+}
+#post>pre code {
+  white-space: pre-wrap;
+}
+
+
+/* CodeMirror */
+
+#post>pre, .CodeMirror-lines {
+  background-color: $bg;
+}
+
+.post-codemirror {
+  position: relative;
+  margin-left: -36px;
+}
+.post-codemirror .title-message,
+.post-codemirror .error-message {
+  margin-left: 36px;
+}
+
+.cm-s-lawr .CodeMirror-linenumber {
+  padding:0;
+  color:#e0e2e5;
+  margin-left:-12px;
+}
+.cm-s-lawr .CodeMirror-lines {
+  border: 1px solid #e5e9ef;
+}
+.cm-s-lawr .CodeMirror-linenumbers {
+  width:35px; /*codemirror adds 1.   */
+}
+
 .cm-s-lawr .error-message {background: $error-red; color: $bg;}
 .title-message {
   color: rgba(0,0,0,0.2);
@@ -36,45 +78,45 @@ $matchbracketw = $w3
 .cm-s-lawr .CodeMirror-line > span::selection,
 .cm-s-lawr .CodeMirror-line > span > span::selection {
   background: #338FFF;
-  color: white;
+  color: $white;
 }
 .cm-s-lawr.CodeMirror {background: transparent; color: $black;}
-.cm-s-lawr .CodeMirror-lines {padding: 1em 0;}
-.cm-s-lawr div.CodeMirror-selected {background: $selbg !important;}
-.cm-s-lawr.CodeMirror-focused div.CodeMirror-selected {background: $selbgfocus !important;}
-.cm-s-lawr span.CodeMirror-selectedtext {color: $selfg !important;}
+//.cm-s-lawr .CodeMirror-lines {padding: 1em 0;}
+.cm-s-lawr .CodeMirror-selected {background: $selbg !important;}
+.cm-s-lawr.CodeMirror-focused .CodeMirror-selected {background: $selbgfocus !important;}
 .cm-s-lawr .CodeMirror-gutters {background: transparent; border-right: 0px;}
 .cm-s-lawr .CodeMirror-linenumber {color: $linenums;}
 .cm-s-lawr .CodeMirror-cursor {border-left: 1px solid $cursor !important;}
 .cm-s-lawr .CodeMirror-cursor {border-right: 1px solid $cursor !important;}
 
-.cm-s-lawr span.cm-comment {color: $comment; font-weight: $commentw}
-.cm-s-lawr span.cm-atom {color: $atom;}
-.cm-s-lawr span.cm-number {color: $atom; font-weight: $numberw; }
-.cm-s-lawr span.cm-qualifier {color: $opqual; font-weight: $opqualw;}
-.cm-s-lawr.CodeMirror-focused span.cm-matchhighlight:not(.CodeMirror-selectedtext) { outline: 1px solid $matchhi; }
+.cm-s-lawr .cm-comment {color: $comment; font-weight: $commentw}
+.cm-s-lawr .cm-atom {color: $atom;}
+.cm-s-lawr .cm-number {color: $atom; font-weight: $numberw; }
+.cm-s-lawr .cm-qualifier {color: $opqual; font-weight: $opqualw;}
+.cm-s-lawr.CodeMirror-focused .cm-matchhighlight:not(.CodeMirror-selectedtext) { outline: 1px solid $matchhi; }
 
-.cm-s-lawr.mode-css span.cm-property,
-.cm-s-lawr span.cm-attribute {color: $attr; font-weight: $attrw; }
-.cm-s-lawr span.cm-string {color: $str; font-weight: $strw; }
+.cm-s-lawr.mode-css .cm-property,
+.cm-s-lawr .cm-attribute {color: $attr; font-weight: $attrw; }
+.cm-s-lawr .cm-string {color: $str; font-weight: $strw; }
+.cm-s-lawr .cm-string-2 {color: $regex; }
 
-.cm-s-lawr span.cm-operator { color: $opqual; font-weight: $numberw; }
-.cm-s-lawr span.cm-keyword,
-.cm-s-lawr span.cm-builtin { color: $built; font-weight: $builtw; font-style: italic; }
+.cm-s-lawr .cm-operator { color: $opqual; font-weight: $numberw; }
+.cm-s-lawr .cm-keyword,
+.cm-s-lawr .cm-builtin { color: $built; font-weight: $builtw; font-style: italic; }
 
-.cm-s-lawr span.cm-variable {color: $black;}
-.cm-s-lawr span.cm-variable-2 {color: $black; font-style: italic;}
-.cm-s-lawr span.cm-def {color: $attr;}
-.cm-s-lawr span.cm-bracket {color: $black;}
-.cm-s-lawr span.cm-tag {color: $tag;}
-.cm-s-lawr span.cm-link {color: $atom;}
-.cm-s-lawr span.cm-error {background: $error-red; color: $black;}
+.cm-s-lawr .cm-variable {color: $black;}
+.cm-s-lawr .cm-variable-2 {color: $black; font-style: italic;}
+.cm-s-lawr .cm-def {color: $attr;}
+.cm-s-lawr .cm-bracket {color: $black;}
+.cm-s-lawr .cm-tag {color: $tag;}
+.cm-s-lawr .cm-link {color: $atom;}
+.cm-s-lawr .cm-error {background: $error-red; color: $black; }
+.cm-s-lawr .cm-error.CodeMirror-selectedtext {background: $error-red-sel; }
+.cm-s-lawr .CodeMirror-selectedtext {color: $selfg !important;}
 
 .cm-s-lawr .CodeMirror-selected,
 .cm-s-lawr .CodeMirror-cursor { transition: all .05s;
   transition-timing-function: ease-out; }
 
-.cm-s-lawr .CodeMirror-selected,
-.cm-s-lawr .CodeMirror-activeline .CodeMirror-gutter-elt {background: whitesmoke !important;}
 .cm-s-lawr .CodeMirror-activeline-background {background: inherit !important;}
 .cm-s-lawr .CodeMirror-matchingbracket { font-weight: $matchbracketw; }

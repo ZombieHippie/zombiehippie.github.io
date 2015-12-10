@@ -9,8 +9,9 @@ var codeStore = {}
 var titleTemplate = require("./components/title.jade")
 
 $("code.live").each(function(){
+  var codeEl = this;
   var mode;
-  var selector = (this.className.match(/\#[\w\d\-\_]+$/) || [false])[0]
+  var selector = (codeEl.className.match(/\#[\w\d\-\_]+$/) || [false])[0]
   var innerSelector = selector
   if (!selector) return;
   else selector = "#live-" + selector.slice(1);
@@ -33,36 +34,39 @@ $("code.live").each(function(){
     }))
   }
   
-  if (/^css\s/.test(this.className))
+  if (/^css\s/.test(codeEl.className))
     mode = "css";
-  else if (/^html\s/.test(this.className))
+  else if (/^html\s/.test(codeEl.className))
     mode = "html";
-  else if (/^javascript\s/.test(this.className))
+  else if (/^javascript\s/.test(codeEl.className))
     mode = "javascript";
-  else return console.log("Unknown live type " + this.className);
+  else return console.log("Unknown live type " + codeEl.className);
   liveCode.addClass(mode)
 
-  var code = this.innerText;
   switch (mode) {
   case "css":
-    liveCode.append("<style>" + code + "</style>")
-    break;
-  case "html":
-    htmlContainer.html(code)
+    liveCode.append("<style></style>")
     break;
   case "javascript":
-    liveCode.append("<script>" + code + "<\/script>")
+    liveCode.append("<script><\/script>")
     break;
   }
-  this.innerText = ""
-  var cm = CodeMirror(this.parentNode, {
+  var codeContents = codeEl.innerText.replace(/[\s\n]*$/, "")
+  var preEl = codeEl.parentNode
+  var cm = CodeMirror(function (elt) {
+    var codeMirrorContainer = document.createElement("DIV")
+    codeMirrorContainer.className = "post-codemirror"
+    codeMirrorContainer.appendChild(elt)
+    preEl.parentNode.replaceChild(codeMirrorContainer, preEl);
+  }, {
     mode: "text/" + mode,
-    value: code.replace(/[\s\n]*$/, ""),
     lineWrapping: true
   })
 
+  // allow styling based on mode-lang class selector
   cm.display.wrapper.className += " mode-" + mode
 
+  // store code editor for communication between other editors
   codeStore[innerSelector][mode] = cm
 
   // attach cm.errorHandler for marking text quickly
@@ -144,4 +148,6 @@ $("code.live").each(function(){
       })
       break;
   }
+  // trigger change so code gets executed on load
+  cm.setValue(codeContents)
 });
