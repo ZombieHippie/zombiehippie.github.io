@@ -1,5 +1,9 @@
 body {
   margin: 0 .5in;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Open Sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 }
 pre {
   page-break-inside: avoid;
