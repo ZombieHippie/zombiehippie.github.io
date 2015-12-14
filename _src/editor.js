@@ -2,23 +2,21 @@ var CodeMirror = require("codemirror")
 require("codemirror/lib/codemirror.css")
 //require("./cm-theme-lawr-general.styl")
 require("./cm-theme-lawr.styl")
-//require("codemirror/mode/coffeescript/coffeescript.js")
-require("codemirror/mode/javascript/javascript.js")
-require("codemirror/mode/css/css.js")
-require("codemirror/mode/xml/xml.js")
-require("codemirror/mode/htmlmixed/htmlmixed.js")
 
+var modealias = require("./mode-alias-static-extract.js")
+
+// other languages do not have strange names, and their mode scripts are commonly located at mode/theirname/theirname.js
+function loadAppropriateModeForLanguage (lang, callback) {
+  modealias(lang, function (mime) {
+    callback(mime)
+  })
+}
 require("codemirror/addon/search/searchcursor.js")
 //require("codemirror/addon/search/match-highlighter.js")
 require("codemirror/addon/edit/closebrackets.js")
 require("codemirror/addon/selection/mark-selection.js")
 
 require("codemirror/keymap/sublime.js")
-
-//require("codemirror/mode/jade/jade.js")
-//require("codemirror/mode/go/go.js")
-//require("codemirror/mode/clike/clike.js")
-//require("codemirror/mode/diff/diff.js")
 
 var defaults = {
   lineNumbers: true,
@@ -41,5 +39,7 @@ var defaults = {
 for (key in defaults) {
   CodeMirror.defaults[key] = defaults[key]
 }
+
+CodeMirror.lazyModeWP = loadAppropriateModeForLanguage
 
 module.exports = CodeMirror

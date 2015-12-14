@@ -24,7 +24,7 @@ If a page has no live editing code, but it does have code snippets, the entire C
 
 Here's some `go`.
 
-```go
+```golang
 // Interface borrowed from sort package
 type Interface interface {
     // Len is the number of elements in the collection.
