@@ -13,7 +13,7 @@ function PostCM () {}
 module.exports = new PostCM
 
 PostCM.prototype.run = function(element) {
-  var lang = element.className.split()[0]
+  var lang = element.className.split(" ")[0]
   require(["codemirror/addon/runmode/runmode.js"], function () {
     CodeMirror.lazyModeWP(lang, function (mode) {
       var codeContents = element.innerText.replace(/[\s\n]*$/, "")
@@ -55,7 +55,7 @@ PostCM.prototype.live = function(element) {
     }))
   }
   
-  mode = codeEl.className.split()[0]
+  mode = codeEl.className.split(" ")[0]
   liveCode.addClass(mode)
 
   switch (mode) {

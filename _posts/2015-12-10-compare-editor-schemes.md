@@ -24,6 +24,9 @@ Here's some code written in the most important language, JavaScript.
 
 <div id="live-target"></div>
 
+Notice that it is expected that **this code has an error**.
+We are merely looking at the colors.
+
 ```javascript live #target
 $("code.live").each(function(){
   var mode;

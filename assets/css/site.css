@@ -67,6 +67,12 @@ pre, .CodeMirror, code, .title-message {
   height: auto !important;
 }
 
+/* IMAGES */
+p > img {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
 /* HELPERS */
 .list-unstyled {
