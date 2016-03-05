@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZombieHippie/Quick-Test-CoffeeScript"
+    "url": "https://github.com/ZombieHippie/zombiehippie.github.io"
   },
   "dependencies": {
     "babel-loader": "5.3.2",
